@@ -49,7 +49,7 @@
   - auth.signup(user)
   - auth.logout()
   - auth.me()
-- book Service
+  - book Service
   - book.detail(id)
   - book.addComment(id, comment) Data - comment  
   - book.addScore(id, score) Data - score  
@@ -61,7 +61,6 @@
 - Log in Page
 - Home Page
 - book Detail Page
-- comment scroe
 
 ## Components
 
@@ -78,7 +77,6 @@
 
 ## Guards - Require ANON / Require USER / Auth Init
 
-- 
 - if logged in cannot access login/signup page
 - if not logged in cannot vote
 - if not logged in cannot add a comment ANON USER
@@ -100,30 +98,20 @@
       required: true
     }
   }
+
   ```
 
   Book {
+    comments: [ 
+      { userId: {
+        type: ObjectId,
+        ref: 'User'
+      },
+        comment: string} 
+    ],
 
-    title: {
-      type: string,
-      required: true
-    },
-    image: {
-      type: string,
-      required: true
-    },
-    description: {
-      type: string,
-      required: true
-    },
-    author: {
-      type: string,
-      required: true
-    }
-    comments: [ {
-      userId: string,
-      comment: string
-    } ]
+    critics: [ 
+      { userId: string } ]
 }
 ```
 
@@ -133,7 +121,7 @@
   - POST /auth/signup
   - POST /auth/login
   - POST /auth/me
-  - GET /profile/me
-  - POST /favorite
-  - GET /restaurante
-  - GET /restaurant/:id
+  - GET /book
+  - GET /book/:id
+  - POST /book/:id/score/userId
+  - POST /book/:id/comment/userId

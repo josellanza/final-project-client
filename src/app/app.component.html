@@ -1,7 +1,11 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <header id="site-header">
   <div class="container">
-    nice header
+   <nav class="navbar">
+    <a [routerLink]="['/signup']" class="navbar signup">signup</a>
+    <a [routerLink]="['/login']" class="navbar login">login</a>
+    <button (click)="logout()">logout</button>
+  </nav>
   </div>
 </header>
 

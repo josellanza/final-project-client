@@ -60,7 +60,10 @@ html {
     margin-bottom: 20px;
     padding-top: 20px;
   }
-  
+
+  .navbar a {
+    margin: auto 20px;
+  }
 
   /* You can add global styles to this file, and also import other style files */
 
