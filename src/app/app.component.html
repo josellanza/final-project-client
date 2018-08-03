@@ -2,9 +2,14 @@
 <header id="site-header">
   <div class="container">
    <nav class="navbar">
-    <a [routerLink]="['/signup']" class="navbar signup">signup</a>
-    <a [routerLink]="['/login']" class="navbar login">login</a>
-    <button (click)="logout()">logout</button>
+    <div *ngIf="!loading && anon">
+      <a [routerLink]="['/signup']" class="navbar signup">signup</a>
+      <a [routerLink]="['/login']" class="navbar login" >login</a>    
+    </div>
+    <div *ngIf="!loading && !!user">
+      <a [routerLink]="['/']" (click)="logout()">logout</a>
+      <a>Hi {{user.username}}!</a>
+    </div>
   </nav>
   </div>
 </header>

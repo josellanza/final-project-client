@@ -15,7 +15,7 @@ export class SignupPageComponent implements OnInit {
   username: string;
   password: string;
 
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(private authService: AuthService, private router: Router) {}
 
     submitForm(form) {
       this.error = '';

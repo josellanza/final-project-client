@@ -9,11 +9,12 @@ import { Router } from '@angular/router';
 })
 export class LoginPageComponent implements OnInit {
 
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(private authService: AuthService, private router: Router) {}
 
   feedbackEnabled = false;
   error = null;
   processing = false;
+  userLogged = false;
   username: string;
   password: string;
 
@@ -24,6 +25,7 @@ export class LoginPageComponent implements OnInit {
       this.processing = true;
       this.authService.login(this.username, this.password)
         .then((result) => {
+          this.userLogged = true;
           this.router.navigate(['/']);
         })
         .catch((err) => {
