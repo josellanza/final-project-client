@@ -2,6 +2,13 @@
 <header id="site-header">
   <div class="container">
    <nav class="navbar">
+    <div class="search-book">
+        <label></label>
+        <input type="text" name="search" [(ngModel)]="search"/>
+        <button type="submit" (click)="logout()">
+          <i class="fas fa-search"></i>
+        </button>
+    </div>
     <div *ngIf="!loading && anon">
       <a [routerLink]="['/signup']" class="navbar signup">signup</a>
       <a [routerLink]="['/login']" class="navbar login" >login</a>    

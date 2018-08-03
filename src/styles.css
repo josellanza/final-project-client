@@ -66,6 +66,22 @@ html {
     color: white;
   }
 
+  .search-book input {
+    border-radius: 5px;
+  }
+
+  .search-book button {
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    color: white;
+  }
+
+  .search-btn {
+    background-image: url("https://png.pngtree.com/element_pic/00/16/07/16578a0516eadc6.jpg");
+    size: 20px;
+  }
+
   /* You can add global styles to this file, and also import other style files */
 
 /* -- forms -- */
