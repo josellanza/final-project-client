@@ -49,7 +49,9 @@
   - auth.signup(user)
   - auth.logout()
   - auth.me()
-  - book Service
+
+- Book Service
+  
   - book.detail(id)
   - book.addComment(id, comment) Data - comment  
   - book.addScore(id, score) Data - score  

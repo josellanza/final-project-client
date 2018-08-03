@@ -1,6 +1,7 @@
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from './services/auth.service';
+import { BooksService } from './services/books.service';
 
 @Component({
   selector: 'app-root',
@@ -12,8 +13,9 @@ export class AppComponent implements OnInit {
   loading = true;
   anon: boolean;
   user: any;
+  book: any;
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(private authService: AuthService, private booksService: BooksService,  private router: Router) {}
 
   ngOnInit() {
     this.authService.userChange$.subscribe((user) => {
@@ -23,13 +25,23 @@ export class AppComponent implements OnInit {
     });
   }
 
+  handleSearchClick() {
+    this.booksService.searchBook(this.book)
+      .then((book) => {
+      this.book = book;
+      })
+      .catch((err) => { //
+        console.log(err);
+      });
+  }
   logout() {
-      this.authService.logout()
-        .then((result) => {
-          this.router.navigate(['/']);
-        })
-        .catch((err) => { //
-        });
+    this.authService.logout()
+      .then((result) => {
+        this.router.navigate(['/']);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
     }
   }
 

@@ -1,24 +1,36 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <header id="site-header">
   <div class="container">
-   <nav class="navbar">
-    <div class="search-book">
+    <nav class="navbar">
+      <div class="search-book">
         <label></label>
-        <input type="text" name="search" [(ngModel)]="search"/>
-        <button type="submit" (click)="logout()">
+        <input type="text" name="search" [(ngModel)]="book"/>
+        <button type="submit" (click)="handleSearchClick()">
           <i class="fas fa-search"></i>
         </button>
-    </div>
-    <div *ngIf="!loading && anon">
-      <a [routerLink]="['/signup']" class="navbar signup">signup</a>
-      <a [routerLink]="['/login']" class="navbar login" >login</a>    
-    </div>
-    <div *ngIf="!loading && !!user">
-      <a [routerLink]="['/']" (click)="logout()">logout</a>
-      <a>Hi {{user.username}}!</a>
-    </div>
-  </nav>
+      </div>
+      <div *ngIf="!loading && anon">
+        <a [routerLink]="['/signup']" class="navbar signup">signup</a>
+        <a [routerLink]="['/login']" class="navbar login" >login</a>    
+      </div>
+      <div *ngIf="!loading && !!user">
+        <a [routerLink]="['/']" (click)="logout()">logout</a>
+        <a>Hi {{user.username}}!</a>
+      </div>
+    </nav>
   </div>
+  <!-- <div *ngIf="book">{{book | json}}
+    <ul>
+      <li *ngFor="let item of book">
+        {{item.title | json}}
+      </li>
+    </ul>
+  </div> -->
+
+<!-- <div>{{book.items[0].volumeInfo.authors[0] | json}}</div> -->
+
+<div *ngFor="let author of book.items[0].volumeInfo.authors">{{author}}</div>
+
 </header>
 
 <div id="site-main" class="container">

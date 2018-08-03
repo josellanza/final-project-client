@@ -6,17 +6,15 @@ import { HttpClient } from '@angular/common/http';
 })
 export class BooksService {
 
-  private baseUrl = 'https://www.googleapis.com/books/v1/volumes?q={search terms}';
+  private baseUrl = 'https://www.googleapis.com/books/v1/volumes'; // ?q={search terms}';
 
   constructor(private httpClient: HttpClient) { }
 
-  searchBook(username: string, password: string): Promise<any> {
+  searchBook(book): Promise<any> {
     const options = {
       withCredentials: true
     };
-    const user = { username, password };
-    return this.httpClient.post(`${this.baseUrl}/signup`, user, options)
-      .toPromise()
-      .then((data) => this.setUser(data));
+    return this.httpClient.get(`${this.baseUrl}/?q=` + book, options)
+      .toPromise();
   }
 }
