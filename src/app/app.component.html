@@ -1,43 +1,46 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<header id="site-header">
-  <div class="container">
-    <nav class="navbar">
-      <div class="search-book">
-        <label></label>
-        <input type="text" name="search" [(ngModel)]="book"/>
-        <button type="submit" (click)="handleSearchClick()">
-          <i class="fas fa-search"></i>
-        </button>
-      </div>
-      <div *ngIf="!loading && anon">
-        <a [routerLink]="['/signup']" class="navbar signup">signup</a>
-        <a [routerLink]="['/login']" class="navbar login" >login</a>    
-      </div>
-      <div *ngIf="!loading && !!user">
-        <a [routerLink]="['/']" (click)="logout()">logout</a>
-        <a>Hi {{user.username}}!</a>
-      </div>
-    </nav>
-  </div>
+<header id="page-header">
+  <nav class="navbar">
+    <div class="brand">
+      <h1>BookAddicted</h1>
+    </div>
+    <div class="logo-container">
+      <img class="logo" src="http://www.delta.edu/_resources/images/infographics/book.png" alt="logo">
+    </div>
+    <div class="search-book">
+      <label></label>
+      <input type="text" name="search" [(ngModel)]="book"/>
+      <button type="submit" (click)="handleSearchClick()">
+        <i class="fas fa-search"></i>
+      </button>
+    </div>
+    <div *ngIf="!loading && anon">
+      <a [routerLink]="['/signup']" class="navbar signup">signup</a>
+      <a [routerLink]="['/login']" class="navbar login" >login</a>    
+    </div>
+    <div *ngIf="!loading && !!user">
+      <a [routerLink]="['/']" (click)="logout()">logout</a>
+      <a>Hi {{user.username}}!</a>
+    </div>
+  </nav>
   <!-- <div *ngIf="book">{{book | json}}
-    <ul>
-      <li *ngFor="let item of book">
-        {{item.title | json}}
-      </li>
-    </ul>
   </div> -->
 
 <!-- <div>{{book.items[0].volumeInfo.authors[0] | json}}</div> -->
 
-<div *ngFor="let author of book.items[0].volumeInfo.authors">{{author}}</div>
-
 </header>
-
-<div id="site-main" class="container">
-  <router-outlet></router-outlet>
-</div>
-
-<footer id="site-footer">
+<section>
+  <div *ngIf="book">
+    <div *ngFor="let author of book.items[0].volumeInfo.authors">{{author}}</div>
+    <div>
+      <h2>{{book.items[0].volumeInfo.title}}</h2>
+    </div>
+  </div>
+  <div id="site-main" class="container">
+    <router-outlet></router-outlet>
+  </div>
+</section>
+<footer id="page-footer">
   <div class="container">
     nice footer
   </div>
