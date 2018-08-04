@@ -1,26 +1,30 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <header id="page-header">
   <nav class="navbar">
-    <div class="brand">
+    <div class="brand-container">
       <h1>BookAddicted</h1>
     </div>
-    <div class="logo-container">
-      <img class="logo" src="http://www.delta.edu/_resources/images/infographics/book.png" alt="logo">
+    <div class="logo container">
+      <img class="logo" src="https://flaticons.net/icons/Miscellaneous/Book-Open.png" alt="logo">
     </div>
-    <div class="search-book">
+    <div class="search container">
       <label></label>
       <input type="text" name="search" [(ngModel)]="book"/>
       <button type="submit" (click)="handleSearchClick()">
         <i class="fas fa-search"></i>
       </button>
     </div>
-    <div *ngIf="!loading && anon">
-      <a [routerLink]="['/signup']" class="navbar signup">signup</a>
-      <a [routerLink]="['/login']" class="navbar login" >login</a>    
-    </div>
-    <div *ngIf="!loading && !!user">
-      <a [routerLink]="['/']" (click)="logout()">logout</a>
-      <a>Hi {{user.username}}!</a>
+    <div class="user-login container">
+        <div *ngIf="!loading && anon">
+            <a [routerLink]="['/login']" class="navbar login" >login</a>
+            / 
+            <a [routerLink]="['/signup']" class="navbar signup">signup</a>  
+        </div>
+        <div *ngIf="!loading && !!user">
+          <a>Hi {{user.username}}!</a>
+          /
+          <a [routerLink]="['/']" (click)="logout()">logout</a>
+        </div>
     </div>
   </nav>
   <!-- <div *ngIf="book">{{book | json}}
