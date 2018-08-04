@@ -36,9 +36,21 @@ a {
 }
 
 li {
-  font-size: 14px;
+  font-size: 17px;
   margin: 17px 5px;
   color: #333333;
+}
+
+input {
+  color: #5b5b5b;
+  border-radius: 5px;
+  font-size: 18px;
+  line-height: 18px;
+  border: 1px solid #C3C3C3;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  background: #FBFBFB;
 }
 
   /* ---- layout ---- */
@@ -84,8 +96,8 @@ li {
   display: inline-block;
 }
 
-.navbar.login {
-  margin: 10px 20px;
+.auth-links a {
+  margin: auto 10px;
   color: white;
 }
 
@@ -114,11 +126,8 @@ li {
 }
 
 .search input {
-  color: #5b5b5b;
-  border-radius: 5px;
   width: 228px;
   height: 31px;
-  font-size: 18px;
 }
 
 .search button {
@@ -229,7 +238,7 @@ form .submit {
 }
 
 form .submit button {
-    background: #4b89bf;
+    background: #23af54;
     width: 80%;
     border: 0;
     color: #FFFFFF;

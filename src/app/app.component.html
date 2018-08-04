@@ -15,14 +15,14 @@
       </button>
     </div>
     <div class="user-login container">
-        <div *ngIf="!loading && anon">
-            <a [routerLink]="['/login']" class="navbar login" ><b>login</b></a>
+        <div *ngIf="!loading && anon" class="auth-links">
+            <a [routerLink]="['/login']"><b>login</b></a>
             / 
-            <a [routerLink]="['/signup']" class="navbar signup">signup</a>  
+            <a [routerLink]="['/signup']">signup</a>  
         </div>
-        <div *ngIf="!loading && !!user">
+        <div *ngIf="!loading && !!user" class="auth-links">
           <a><b>Hi {{user.username}}!</b></a>
-          /
+         /
           <a [routerLink]="['/']" (click)="logout()">logout</a>
         </div>
     </div>
@@ -37,7 +37,7 @@
   <div *ngIf="book">
     <div *ngFor="let author of book.items[0].volumeInfo.authors">{{author}}</div>
     <div>
-      <h2>{{book.items[0].volumeInfo.title}}</h2>
+        <h2>{{book.items[0].volumeInfo.title}}</h2>
     </div>
   </div>
   <div id="site-main" class="container">
