@@ -1,32 +1,48 @@
-<h2>Signup</h2>
-<form (ngSubmit)="submitForm(form)" #form="ngForm" novalidate [ngClass]="{'is-processing': processing}">
-  <div class="field" [ngClass]="{'has-error': feedbackEnabled && usernameField.errors}">
-    <label>Username</label>
-    <input type="text" name="username" [(ngModel)]="username" #usernameField="ngModel" required minlength="3" [disabled]="processing"/>
-    <div *ngIf="feedbackEnabled && usernameField.errors">
-      <p *ngIf="usernameField.errors.required" class="validation">username required</p>
-      <p *ngIf="usernameField.errors.minlength" class="validation">username is too short</p>
-    </div>
-  </div>
-  <div class="field" [ngClass]="{'has-error': feedbackEnabled && passwordField.errors}">
-    <label>Password</label>
-    <input type="text" name="password" [(ngModel)]="password" #passwordField="ngModel" required minlength="3" [disabled]="processing"/>
-    <div *ngIf="feedbackEnabled && passwordField.errors">
-      <p *ngIf="passwordField.errors.required" class="validation">password required</p>
-      <p *ngIf="passwordField.errors.minlength" class="validation">password is too short</p>
-    </div>
-  </div>
+<div class="main-container">
+  <section class="login-signup-section">
+    <div class="login-signup-wrapper">
+        <h2>Signup</h2>
+        <form (ngSubmit)="submitForm(form)" #form="ngForm" novalidate [ngClass]="{'is-processing': processing}">
+          <div class="field" [ngClass]="{'has-error': feedbackEnabled && usernameField.errors}">
+            <label>Username</label>
+            <input type="text" name="username" [(ngModel)]="username" #usernameField="ngModel" required minlength="3" [disabled]="processing"/>
+            <div *ngIf="feedbackEnabled && usernameField.errors">
+              <p *ngIf="usernameField.errors.required" class="validation">username required</p>
+              <p *ngIf="usernameField.errors.minlength" class="validation">username is too short</p>
+            </div>
+          </div>
+          <div class="field" [ngClass]="{'has-error': feedbackEnabled && passwordField.errors}">
+            <label>Password</label>
+            <input type="text" name="password" [(ngModel)]="password" #passwordField="ngModel" required minlength="3" [disabled]="processing"/>
+            <div *ngIf="feedbackEnabled && passwordField.errors">
+              <p *ngIf="passwordField.errors.required" class="validation">password required</p>
+              <p *ngIf="passwordField.errors.minlength" class="validation">password is too short</p>
+            </div>
+          </div>
 
-  <div class="field submit">
-    <button type="submit" [disabled]="processing">Sign up</button>
-    <div *ngIf="feedbackEnabled && form.invalid">
-      <p class="validation">There are errors in the form, please review the fields</p>
-    </div>
-    <div *ngIf="error" class="validation">
-      <div [ngSwitch]="error.code">
-        <p *ngSwitchCase= "'username-not-unique'">Username is already taken!</p>
-        <p *ngSwitchDefault>An unexpected error occurred, please try again</p>
+          <div class="field submit">
+            <button type="submit" [disabled]="processing">Sign up</button>
+            <div *ngIf="feedbackEnabled && form.invalid">
+              <p class="validation">There are errors in the form, please review the fields</p>
+            </div>
+            <div *ngIf="error" class="validation">
+              <div [ngSwitch]="error.code">
+                <p *ngSwitchCase= "'username-not-unique'">Username is already taken!</p>
+                <p *ngSwitchDefault>An unexpected error occurred, please try again</p>
+              </div>
+            </div>
+          </div>
+        </form>
       </div>
+    <div class="register-info">
+      <h1>Why registered?</h1>
+      <ul>
+        <li>Search for whatever book</li>
+        <li>See the details of the book</li>
+        <li>Share comments with the others users</li>
+        <li>See the critics of the books, dame by literally experts</li>
+        <li>Give an score to a book so you contribute to valorate it!</li> 
+      </ul>
     </div>
-  </div>
-</form>
+  </section>  
+</div>

@@ -16,29 +16,24 @@ body {
   /* ---- typography ---- */
   
 body {
-  color: #111;
+  color: #666;
   font-family: Arial, sans-serif;
   font-size: 16px;
   line-height: 147%;
 }
 
 h1 {
-  font-size: 35px;
-  margin: 14px 0;
-  letter-spacing: 1px;
-  text-shadow: 0 0 20px rgba(90, 90, 90, 0.75);
+  color: #666;
 }
-  
-h2 {}
-
-h3 {}
 
 p {
   margin: 0;
 }
-  
-  
-  
+
+a {
+  text-decoration: none;
+}
+
   /* ---- layout ---- */
   
 #page-header {
@@ -58,6 +53,9 @@ p {
 
 #site-main {
   margin-bottom: 60px;
+  display: flex;
+  margin: 0 auto;
+  width: 980px;
 }
 
 #page-header nav {
@@ -66,14 +64,17 @@ p {
   width: 980px;
 }
 
+#page-header h1 {
+  font-size: 35px;
+  margin: 14px 0;
+  letter-spacing: 1px;
+  text-shadow: 0 0 20px rgba(90, 90, 90, 0.75);
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
 .container {
   margin: auto auto;
   display: inline-block;
-}
-
-.section {
-  margin-bottom: 20px;
-  padding-top: 20px;
 }
 
 .navbar a {
@@ -81,21 +82,33 @@ p {
   color: white;
 }
 
+.section {
+  margin-bottom: 20px;
+  padding-top: 20px;
+}
+
 .logo {
   width: 83px;
   height: 54px;
 }
 
-
+.fas {
+  font-size: 20px;
+  margin: auto auto;
+}
 
 .search input {
+  color: #5b5b5b;
   border-radius: 5px;
+  width: 228px;
+  height: 31px;
+  font-size: 18px;
 }
 
 .search button {
-      background-color: transparent;
-    color: white;
-    border: none;
+  background-color: transparent;
+  color: white;
+  border: none;
 }
 
 .search-btn {
@@ -103,9 +116,37 @@ p {
   size: 20px;
 }
 
-  /* You can add global styles to this file, and also import other style files */
 
-/* -- forms -- */
+.main-container {
+  padding: 5px 8px 30px 5px;
+  max-height: 999999px;
+  width: 100%;
+  border: 1px solid #A0A0A0;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: #ffffff;
+  cursor: auto;
+  box-shadow: 0 0 20px rgba(90, 90, 90, 0.75);
+}
+
+.login-signup-section {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+} 
+
+.login-signup-wrapper {
+  display: inline-block;
+  width: 360px;
+  margin: 30px;
+  padding: 20px 0px;
+  background: #F2F2F2;
+  border-radius: 5px;
+  border: 1px solid #e2e2e2;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+  /* -- forms -- */
 
 form.is-processing {
 	opacity: 0.5;
@@ -121,6 +162,18 @@ form label {
 	font-style: bold;
 }
 
+.login-signup-container {
+  display: inline-block;
+  vertical-align: top;
+  width: 360px;
+  margin: 30px auto;
+  padding: 20px 0px;
+  background: #F2F2F2;
+  border-radius: 5px;
+  border: 1px solid #e2e2e2;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
 form input {
   padding: 5px;
   font-size: 16px;
@@ -131,11 +184,16 @@ form .submit {
 }
 
 form .submit button {
-  padding: 5px 20px;
-  text-align: center;
-  font-size: 16px;
-  background-color: rgb(224, 224, 224);
-  cursor: pointer;
+    background: #4b89bf;
+    width: 80%;
+    border: 0;
+    color: #FFFFFF;
+    height: 35px;
+    line-height: 35px;
+    font-size: 20px;
+    border-radius: 3px;
+    margin: 20px 0px;
+    cursor: pointer;
 }
 
 form .validation {
@@ -147,15 +205,15 @@ form .field.has-error input {
 	border: 1px solid  red;
 }
 
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
   .container {
     max-width: 728px;
   }
-}
-
+} */
+/* 
 @media (min-width: 385px) {
   .container {
     max-width: 368px;
   }
-}
+} */
 
