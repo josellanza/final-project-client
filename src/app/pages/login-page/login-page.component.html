@@ -1,7 +1,9 @@
 <div class="main-container">
   <section class="login-signup-section">
     <div class="login-signup-wrapper">
-      <h2>Login</h2>
+      <div class="login-icon">
+        <h2><i class="far fa-user"></i></h2> 
+      </div>
       <form (ngSubmit)="submitForm(form)" #form="ngForm" novalidate [ngClass]="{'is-processing': processing}">
         <div class="field" [ngClass]="{'has-error': feedbackEnabled && usernameField.errors}">
           <label>Username</label>
@@ -34,11 +36,11 @@
   <div class="register-info">
       <h1>Why registered?</h1>
       <ul>
-        <li>Search for whatever book</li>
-        <li>See the details of the book</li>
-        <li>Share comments with the others users</li>
-        <li>See the critics of the books, dame by literally experts</li>
-        <li>Give an score to a book so you contribute to valorate it!</li> 
+          <li>Search for whatever book</li>
+          <li>See the details of the book</li>
+          <li>Share comments with the others users</li>
+          <li>See the critics of the books</li>
+          <li>Give an score to a book!</li>
       </ul>
     </div>
   </section>
