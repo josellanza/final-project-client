@@ -20,6 +20,7 @@ body {
   font-family: Arial, sans-serif;
   font-size: 16px;
   line-height: 147%;
+  background-color: #f5f8fa;
 }
 
 h1 {
@@ -66,7 +67,7 @@ input {
 #page-footer {
   color: white;
   padding: 60px 0;
-  background: rgb(44, 188, 94);;
+  background: rgb(0, 0, 0,0.6);
   box-shadow: 0 0 20px rgba(90, 90, 90, 0.75);
 }
 
@@ -101,10 +102,6 @@ input {
   color: white;
 }
 
-/* .brand-link {
-  margin:0;
-} */
-
 .section {
   margin-bottom: 20px;
   padding-top: 20px;
@@ -121,7 +118,7 @@ input {
 }
 
 .fa-user {
-  font-size: 56px;
+  font-size: 72px;
   color: #a8a8a8;
 }
 
@@ -158,6 +155,8 @@ input {
   box-shadow: 0 0 20px rgba(90, 90, 90, 0.75);
 }
 
+/* login-signup-pages */
+
 .login-signup-container {
   display: inline-block;
   vertical-align: top;
@@ -187,9 +186,30 @@ input {
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
 }
 
+.login-icon {
+  background: #FFF;
+  border-radius: 60px;
+  display: inline-block;
+  height: 100px;
+  line-height: 88px;
+  margin: 0px 0 10px 0;
+  text-align: center;
+  vertical-align: top;
+  width: 100px;
+}
+
+.login-icon h2 {
+  margin: 10px 0px;
+}
+
+
+/* login-signup-pages ends */
+
+
 .register-info {
   padding: 20px 0px;
   text-align: -webkit-left;
+  color: rgb(0,0,0,0.7);
 }
 
 .register-info h1 {
@@ -197,21 +217,6 @@ input {
   font-size: 1.8em;
 }
 
-.login-icon {
-  background: #FFF;
-  border-radius: 60px;
-  display: inline-block;
-  height: 80px;
-  line-height: 88px;
-  margin: 0px 0 10px 0;
-  text-align: center;
-  vertical-align: top;
-  width: 80px;
-}
-
-.login-icon h2 {
-  margin: 7px 0px;
-}
   /* -- forms -- */
 
 form.is-processing {
@@ -230,7 +235,9 @@ form label {
 
 form input {
   padding: 5px;
-  font-size: 16px;
+  font-size: 20px;
+  height: 50px;
+  width: 300px;
 }
 
 form .submit {
@@ -242,7 +249,7 @@ form .submit button {
     width: 80%;
     border: 0;
     color: #FFFFFF;
-    height: 35px;
+    height: 41px;
     line-height: 35px;
     font-size: 20px;
     border-radius: 3px;
