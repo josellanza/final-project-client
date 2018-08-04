@@ -1,0 +1,10 @@
+<div class="main-container">
+    <div *ngIf="book">
+        <div *ngFor="let author of book.items[0].volumeInfo.authors">{{author}}</div>
+        <div>
+            <h2>{{book.items[0].volumeInfo.title}}</h2>
+            <p>{{book.items[0].volumeInfo.description}}</p>
+            <img src="{{book.items[0].volumeInfo.imageLinks.smallThumbnail}}" alt="">
+        </div>
+    </div>
+</div>

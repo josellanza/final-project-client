@@ -27,22 +27,12 @@
         </div>
     </div>
   </nav>
-  <!-- <div *ngIf="book">{{book | json}}
-  </div> -->
-
-<!-- <div>{{book.items[0].volumeInfo.authors[0] | json}}</div> -->
-
 </header>
 <section>
-  <div *ngIf="book">
-    <div *ngFor="let author of book.items[0].volumeInfo.authors">{{author}}</div>
-    <div>
-        <h2>{{book.items[0].volumeInfo.title}}</h2>
-    </div>
+  <div *ngIf="book && book.items"   id="site-main" class="container">
+      <app-home-page [book]="book"></app-home-page> 
   </div>
-  <div id="site-main" class="container">
-    <router-outlet></router-outlet>
-  </div>
+  <router-outlet></router-outlet>
 </section>
 <footer id="page-footer">
   <div class="container">

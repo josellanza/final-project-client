@@ -36,10 +36,20 @@ a {
   color: white;
 }
 
+ul {
+  list-style: none;
+}
+
 li {
-  font-size: 17px;
+  font-size: 20px;
   margin: 17px 5px;
   color: #333333;
+}
+
+li::before {
+  content: "•"; color: rgb(0, 0, 0,0.6);
+  display: inline-block; width: 1em;
+  margin-left: -1em
 }
 
 input {
@@ -123,7 +133,7 @@ input {
 }
 
 .search input {
-  width: 228px;
+  width: 300px;
   height: 31px;
 }
 

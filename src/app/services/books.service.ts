@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class BooksService {
 
-  private baseUrl = 'https://www.googleapis.com/books/v1/volumes'; // ?q={search terms}';
+  private baseUrl = 'https://www.googleapis.com/books/v1/volumes'; // ?q=little prince
 
   constructor(private httpClient: HttpClient) { }
 
