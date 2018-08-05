@@ -5,7 +5,7 @@
         <a [routerLink]="['/']" class="brand-link"><h1><font color="#62c8f7">book</font><font color="white">addicted</font></h1></a>
     </div>
     <div class="logo container">
-      <img class="header-logo" src="https://flaticons.net/icons/Miscellaneous/Book-Open.png" alt="logo">
+      <img class="nav-logo" src="https://flaticons.net/icons/Miscellaneous/Book-Open.png" alt="logo">
     </div>
     <div class="search container">
       <label></label>
@@ -16,20 +16,20 @@
     </div>
     <div class="user-login container">
         <div *ngIf="!loading && anon" class="auth-links">
-            <a [routerLink]="['/login']"><b>Iniciar sesión</b></a>
+            <a [routerLink]="['/login']"><b><i class="fas fa-user"></i> Iniciar sesión</b></a>
             / 
-            <a [routerLink]="['/signup']">Registrarse</a>  
+            <a [routerLink]="['/signup']"><i class="fas fa-user-plus"></i> Registrarse</a>  
         </div>
         <div *ngIf="!loading && !!user" class="auth-links">
-          <a><b>Bienvenido {{user.username}}!</b></a>
+          <a><b><i class="fas fa-user"></i> {{user.username}}</b></a>
          /
-          <a [routerLink]="['/']" (click)="logout()">Cerrar sesión</a>
+          <a [routerLink]="['/']" (click)="logout()"><i class="fas fa-sign-in-alt"></i> Cerrar sesión</a>
         </div>
     </div>
   </nav>
 </header>
 <section>
-  <div *ngIf="book"   id="site-main" class="container">
+  <div *ngIf="book" id="site-main" class="container">
       <app-detail-page [book]="book"></app-detail-page> 
   </div>
   <router-outlet></router-outlet>

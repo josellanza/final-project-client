@@ -2,30 +2,38 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Observable, Subject } from 'rxjs';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
+
 export class AuthService {
 
   private user: any;
   private userChange: Subject<any> = new Subject();
 
   private baseUrl = 'http://localhost:3000/auth';
-  private baseUrl2 = 'http://localhost:3000';
+  private baseUrl2 = 'http://localhost:3000/';
+
+
 
   userChange$: Observable<any> = this.userChange.asObservable();
 
   constructor(private httpClient: HttpClient) { }
 
+
+  storeBook(book: any): Promise<any> {
+
+    const options = {
+      withCredentials: true
+    };
+    return this.httpClient.post(`${this.baseUrl2}book`, book, options)
+    .toPromise();
+  }
+
   private setUser(user?: any) {
     this.user = user;
     this.userChange.next(user);
     return user;
-  }
-
-  storeBook(book: string) {
-    const options = {
-      withCredentials: true
-    };
-    return this.httpClient.post(`${this.baseUrl2}/book`, book, options);
   }
 
   me(): Promise<any> {

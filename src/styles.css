@@ -66,6 +66,13 @@ input {
 
   /* ---- layout ---- */
   
+#site-main {
+  margin-bottom: 60px;
+  display: flex;
+  margin: 0 auto;
+  width: 980px;
+}
+
 #page-header {
   color: white;
   background: rgb(44, 188, 94);
@@ -86,13 +93,6 @@ input {
   letter-spacing: 1px;
   text-shadow: 0 0 20px rgba(90, 90, 90, 0.75);
   font-family: 'Roboto Condensed', sans-serif;
-}
-
-#site-main {
-  margin-bottom: 60px;
-  display: flex;
-  margin: 0 auto;
-  width: 980px;
 }
 
 #page-container {
@@ -123,140 +123,15 @@ input {
 
 /* classes */
 
-.container {
-  margin: auto auto;
-  display: inline-block;
-}
-
-/* footer */
-
-.footer-container{
-  display: flex;
-  flex-direction: row-reverse;
-  align-items: flex-end;
-  margin: 0 auto;
-  width: 980px;
-  height: 100%;
-}
-
-.footer-logo {
-  width: 40px;
-  height: 25px;
-}
-
-.footer-brand {
-  margin: 4px 5px;
-  text-shadow: 0 0 20px rgba(90, 90, 90, 0.75);
-  font-family: 'Roboto Condensed', sans-serif;
-}
-
-
-/*  */
-
-
 .auth-links a {
   margin: auto 10px;
   color: white;
 }
 
-.section {
-  margin-bottom: 20px;
-  padding-top: 20px;
-}
-
-.header-logo {
-  width: 83px;
-  height: 54px;
-}
-
-
-
-/* icons */
-
-.fa-search {
-  font-size: 20px;
+.container {
   margin: auto auto;
-  cursor: pointer;
-}
-
-.fa-user {
-  font-size: 72px;
-  color: #a8a8a8;
-}
-
-.fa-copyright {
-  font-size: 7.5px;
-}
-
-/* search style */
-
-.search input {
-  width: 300px;
-  height: 31px;
-}
-
-.search button {
-  background-color: transparent;
-  color: white;
-  border: none;
-}
-
-.search-btn {
-  background-image: url("https://png.pngtree.com/element_pic/00/16/07/16578a0516eadc6.jpg");
-  size: 20px;
-}
-
-.user-login.container {
-  margin: auto 0 auto auto;
-}
-
-/* login-signup-pages */
-
-.login-signup-container {
   display: inline-block;
-  vertical-align: top;
-  width: 360px;
-  margin: 30px auto;
-  padding: 20px 0px;
-  background: #F2F2F2;
-  border-radius: 5px;
-  border: 1px solid #e2e2e2;
-  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
 }
-
-.login-signup-section {
-  display: flex;
-  justify-content: space-around;
-  text-align: center;
-} 
-
-.login-signup-wrapper {
-  display: inline-block;
-  width: 360px;
-  margin: 30px;
-  padding: 20px 0px;
-  background: #F2F2F2;
-  border-radius: 5px;
-  border: 1px solid #e2e2e2;
-  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-}
-
-.login-icon {
-  background: #FFF;
-  border-radius: 60px;
-  display: inline-block;
-  height: 100px;
-  line-height: 88px;
-  margin: 0px 0 10px 0;
-  text-align: center;
-  vertical-align: top;
-  width: 100px;
-}
-
-.login-icon h2 {
-  margin: 10px 0px;
-}
-
 
 /* card */
 
@@ -292,20 +167,165 @@ input {
   line-height: 40px;
 }
 
-/* register card */
-
-.register-card {
+.card-register {
   padding: 20px 0px;
   text-align: -webkit-left;
   color: rgb(0,0,0,0.7);
 }
 
-.register-card h1 {
+.card-register h1 {
   padding-left: 26px;
   font-size: 1.8em;
 }
 
-  /* -- forms -- */
+/* footer */
+
+.footer-container{
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: flex-end;
+  margin: 0 auto;
+  width: 980px;
+  height: 100%;
+}
+
+.footer-logo {
+  width: 40px;
+  height: 25px;
+}
+
+.footer-brand {
+  margin: 4px 5px;
+  text-shadow: 0 0 20px rgba(90, 90, 90, 0.75);
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+/* icons */
+
+.fa-search {
+  font-size: 20px;
+  margin: auto auto;
+  cursor: pointer;
+}
+
+.fa-user {
+  
+}
+
+.fa-user-plus {
+
+}
+
+.fa-copyright {
+  font-size: 7.5px;
+}
+
+.nav-logo {
+  width: 80px;
+  height: 40px;
+  margin-top: 5px;
+}
+
+/* login-signup-pages */
+
+.login-signup-container {
+  display: inline-block;
+  vertical-align: top;
+  width: 360px;
+  margin: 30px auto;
+  padding: 20px 0px;
+  background: #F2F2F2;
+  border-radius: 5px;
+  border: 1px solid #e2e2e2;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.login-signup-wrapper {
+  display: inline-block;
+  width: 360px;
+  margin: 30px;
+  padding: 20px 0px;
+  background: #F2F2F2;
+  border-radius: 5px;
+  border: 1px solid #e2e2e2;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.login-signup-icon {
+  background: #FFF;
+  border-radius: 60px;
+  display: inline-block;
+  height: 100px;
+  line-height: 88px;
+  margin: 0px 0 10px 0;
+  text-align: center;
+  vertical-align: top;
+  width: 100px;
+}
+
+.login-signup-icon {
+  background: #FFF;
+  border-radius: 60px;
+  display: inline-block;
+  height: 110px;
+  line-height: 88px;
+  margin: 0px 0 10px 0;
+  text-align: center;
+  vertical-align: top;
+  width: 110px;  
+}
+
+.login-signup-section {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.login-signup-icon h2 {
+  margin: 10px -25.5px 10px 0px;
+  font-size: 68px;
+  color: #a8a8a8;
+}
+.login-signup-icon.user h2 {
+  margin: 10px 0px;
+}
+
+/* nav */
+
+nav li {
+
+}
+
+/* search style */
+
+.search input {
+  width: 300px;
+  height: 31px;
+}
+
+.search button {
+  background-color: transparent;
+  color: white;
+  border: none;
+}
+
+.search-btn {
+  background-image: url("https://png.pngtree.com/element_pic/00/16/07/16578a0516eadc6.jpg");
+  size: 20px;
+}
+
+
+.section {
+  margin-bottom: 20px;
+  padding-top: 20px;
+}
+
+.user-login.container {
+  margin: auto 0 auto auto;
+}
+
+
+/* -- forms -- */
 
 form.is-processing {
 	opacity: 0.5;
@@ -354,18 +374,14 @@ form .field.has-error input {
 	border: 1px solid  red;
 }
 
-/* @media (min-width: 768px) {
-  .container {
-    max-width: 728px;
+@media screen and (max-width: 992px) {
+  body {
   }
-} */
-/* 
-@media (max-width: 600px) {
- .page-header {
-  width: 1000px;
- }
- .page-footer {
-  width: 1000px;
 }
-} */
 
+/* On screens that are 600px or less, set the background color to olive */
+@media screen and (max-width: 600px) {
+  body {
+    width: 1000px;
+  }
+}

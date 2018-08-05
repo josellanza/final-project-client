@@ -1,8 +1,8 @@
 <div id="page-container">
   <section class="login-signup-section">
     <div class="login-signup-wrapper">
-      <div class="login-icon">
-        <h2><i class="far fa-user"></i></h2> 
+      <div class="login-signup-icon user">
+        <h2><i class="fas fa-user"></i></h2> 
       </div>
       <form (ngSubmit)="submitForm(form)" #form="ngForm" novalidate [ngClass]="{'is-processing': processing}">
         <div class="field" [ngClass]="{'has-error': feedbackEnabled && usernameField.errors}">
@@ -21,9 +21,6 @@
         </div>
         <div class="field submit">
           <button type="submit" [disabled]="processing">Iniciar sesión</button>
-          <div *ngIf="feedbackEnabled && form.invalid">
-            <p class="validation">Revisa los campos marcados</p>
-          </div>
           <div *ngIf="error" class="validation">
             <div [ngSwitch]="error.code">
               <p *ngSwitchCase="'not-found'">Usuario o contraseña son incorrectos</p>
@@ -33,7 +30,7 @@
         </div>
       </form>
     </div>
-    <div class="register-card">
+    <div class="card-register">
       <h1>¿Por qué registrarse?</h1>
       <ul>
           <li>Añade comentarios a tus libros</li>
