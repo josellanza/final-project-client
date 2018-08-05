@@ -333,16 +333,16 @@ form .submit {
 }
 
 form .submit button {
-    background: #23af54;
-    width: 80%;
-    border: 0;
-    color: #FFFFFF;
-    height: 41px;
-    line-height: 35px;
-    font-size: 20px;
-    border-radius: 3px;
-    margin: 20px 0px;
-    cursor: pointer;
+  background: #23af54;
+  width: 80%;
+  border: 0;
+  color: #FFFFFF;
+  height: 41px;
+  line-height: 35px;
+  font-size: 20px;
+  border-radius: 3px;
+  margin: 20px 0px;
+  cursor: pointer;
 }
 
 form .validation {
@@ -354,15 +354,18 @@ form .field.has-error input {
 	border: 1px solid  red;
 }
 
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
   .container {
     max-width: 728px;
   }
+} */
+/* 
+@media (max-width: 600px) {
+ .page-header {
+  width: 1000px;
+ }
+ .page-footer {
+  width: 1000px;
 }
-
-@media (min-width: 320px) {
-  .container {
-    max-width: 1000px;
-  }
-}
+} */
 
