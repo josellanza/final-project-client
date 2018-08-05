@@ -1,0 +1,12 @@
+<div id="page-container">
+    <div class="card-image" *ngIf="book">
+        <div >
+            <img src="{{book.items[0].volumeInfo.imageLinks.smallThumbnail}}" alt="">
+        </div>
+        <div class="card-detail" *ngFor="let author of book.items[0].volumeInfo.authors">
+          <label>title: </label><h1>{{book.items[0].volumeInfo.title}}</h1>
+          <label>author: </label><p>{{author}}</p>
+          <label>description: </label><p>{{book.items[0].volumeInfo.description}}</p>
+        </div>
+    </div>  
+</div>       

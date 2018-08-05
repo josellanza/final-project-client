@@ -12,6 +12,7 @@ import { RequireAnonGuard } from './guards/require-anon.guard';
 import { RequireUserGuard } from './guards/require-user.guard';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { RequireInitGuard } from './guards/require-init.guard';
+import { DetailPageComponent } from './pages/detail-page/detail-page.component';
 
 const routes: Routes = [
   { path: 'signup', component: SignupPageComponent, canActivate: [RequireAnonGuard] },
@@ -24,7 +25,8 @@ const routes: Routes = [
     AppComponent,
     SignupPageComponent,
     LoginPageComponent,
-    HomePageComponent
+    HomePageComponent,
+    DetailPageComponent
   ],
   imports: [
     BrowserModule,

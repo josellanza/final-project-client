@@ -118,7 +118,6 @@ input {
   margin-top: 30px;
   padding: 4px;
   color: #fff;
-  font-size: 15px;
   cursor: auto;
 }
 
@@ -147,7 +146,10 @@ input {
 
 .footer-brand {
   margin: 4px 5px;
+  text-shadow: 0 0 20px rgba(90, 90, 90, 0.75);
+  font-family: 'Roboto Condensed', sans-serif;
 }
+
 
 /*  */
 
@@ -258,7 +260,8 @@ input {
 }
 
 
-/*  */
+/* card */
+
 
 /* register card */
 
