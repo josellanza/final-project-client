@@ -19,6 +19,14 @@ export class AuthService {
     this.userChange.next(user);
     return user;
   }
+
+  storeBook(book): any {
+    const options = {
+      withCredentials: true
+    };
+    return this.httpClient.post(`${this.baseUrl}/auth/book`, book, options);
+  }
+
   me(): Promise<any> {
     const options = {
       withCredentials: true
