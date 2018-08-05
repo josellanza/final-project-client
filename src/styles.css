@@ -210,8 +210,6 @@ input {
   margin: auto 0 auto auto;
 }
 
-
-
 /* login-signup-pages */
 
 .login-signup-container {
@@ -262,6 +260,37 @@ input {
 
 /* card */
 
+.card-image {
+  display: flex;
+  margin: auto 10px;
+}
+
+.card-detail {
+  margin-left: 380px;
+}
+
+.left-card-container {
+  width: 240px;
+  height: 100%;
+  margin: auto 15px;
+}
+
+.card-image img {
+  border-radius: 5px;
+  vertical-align: middle;
+  border: 1px solid #E2E2E2;
+  box-shadow: 2px 3px 4px #BBBBBB;
+  width: 220px;
+  height: 350px;
+} 
+
+.card-title h1 {
+  margin-right: 380px;
+  padding-left: 26px;
+  font-size: 1.8em;
+  letter-spacing: inherit;
+  line-height: 40px;
+}
 
 /* register card */
 
@@ -324,10 +353,6 @@ form .validation {
 form .field.has-error input {
 	border: 1px solid  red;
 }
-
-
-
-
 
 @media (min-width: 768px) {
   .container {

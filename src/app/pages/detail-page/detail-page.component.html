@@ -1,12 +1,24 @@
-<div id="page-container">
-    <div class="card-image" *ngIf="book">
-        <div >
-            <img src="{{book.items[0].volumeInfo.imageLinks.smallThumbnail}}" alt="">
+<div id="page-container" *ngIf="book">
+    <div class="card-title">
+        <h1>{{book.items[0].volumeInfo.title}}</h1>
+    </div>
+    <div class="card-image">
+        <div class="left-card-container" >
+            <div>
+                <img src="{{book.items[0].volumeInfo.imageLinks.smallThumbnail}}" alt="">
+            </div>
+            <div>
+                <h1>votar</h1>
+            </div>
+            <div>
+                <h1>comentar</h1>
+            </div>    
         </div>
         <div class="card-detail" *ngFor="let author of book.items[0].volumeInfo.authors">
-          <label>title: </label><h1>{{book.items[0].volumeInfo.title}}</h1>
-          <label>author: </label><p>{{author}}</p>
-          <label>description: </label><p>{{book.items[0].volumeInfo.description}}</p>
+          <label>autor: </label><p>{{author}}</p>
+          <label>año: </label><p></p>
+          <label>idioma: </label><p></p>
+          <label>precio: </label><p></p>
         </div>
     </div>  
 </div>       
