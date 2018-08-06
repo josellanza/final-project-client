@@ -22,7 +22,7 @@
           </div>
         </div>
         <div class="field submit">
-          <button type="submit" [disabled]="processing">Registrarme</button>
+          <button type="submit" [disabled]="processing">Registrarse</button>
           <div *ngIf="error" class="validation">
             <div [ngSwitch]="error.code">
               <p *ngSwitchCase= "'username-not-unique'">Nombre de usuario usado, prueba con otro</p>
