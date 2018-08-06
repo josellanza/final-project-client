@@ -10,10 +10,10 @@
             <div class="card-vote-comment">
                 <div class="detail-rat-votes-container">
                     <div class="detail-rat-container">
-                        5.0
+                        7.5
                     </div>
                     <div class="detail-votes-container">
-                       53 votos
+                       1.125 votos
                     </div>
                 </div>
                 <div class="detail-rat-votes-container">
@@ -33,11 +33,27 @@
             </div>  
             </div>
         </div>
-        <div class="card-detail" *ngFor="let author of book.items[0].volumeInfo.authors">
-          <label>autor: </label><p>{{author}}</p>
-          <label>año: </label><p></p>
-          <label>idioma: </label><p></p>
-          <label>precio: </label><p></p>
+        <div class="card-detail">
+          <ul>
+              <li class="card-list-details">Titulo: </li>
+              <li class="card-list-details">Autor: </li>
+              <li class="card-list-details">Paginas: </li>
+              <li class="card-list-details">Año edición: </li>
+              <li class="card-list-details">Precio: </li>
+          </ul>
         </div>
+        <div class="card-info">
+                <ul>
+                    <li class="card-list-info">{{book.items[0].volumeInfo.title}}</li>
+                    <li class="card-list-info">
+                        <div class="inline-authors">
+                            <div *ngFor="let author of book.items[0].volumeInfo.authors">{{author}}</div>
+                        </div>
+                    </li>
+                    <li class="card-list-info">{{book.items[0].volumeInfo.pageCount}}</li>
+                    <li class="card-list-info"></li>
+                    <li class="card-list-info"></li>
+                </ul>
+              </div>
     </div>  
 </div>       
