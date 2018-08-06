@@ -9,9 +9,9 @@
     </div>
     <div class="search container">
       <label></label>
-      <input type="text" name="search" [(ngModel)]="book"/>
+      <input type="text" name="search" [(ngModel)]="book"/> 
       <button class= "btn-book" type="submit" (click)="handleSearchClick()">
-        <i class="fas fa-search"></i>
+        <a [routerLink]="['/:id']"><i class="fas fa-search"></i></a>
       </button>
     </div>
     <div class="user-login container">
@@ -29,9 +29,10 @@
   </nav>
 </header>
 <section>
-  <div *ngIf="book" id="site-main" class="container">
+  <div *ngIf="!loading" id="site-main" class="container">
       <app-detail-page [book]="book"></app-detail-page> 
   </div>
+  
   <router-outlet></router-outlet>
 </section>
 <footer id="page-footer">

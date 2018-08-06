@@ -6,14 +6,32 @@
         <div class="left-card-container" >
             <div>
                 <img src="{{book.items[0].volumeInfo.imageLinks.smallThumbnail}}" alt="">
-                {{book.items[0].volumeInfo.averageRating}}
             </div>
-            <div>
-                <h1>votar</h1>
+            <div class="card-vote-comment">
+                <div class="detail-rat-votes-container">
+                    <div class="detail-rat-container">
+                        5.0
+                    </div>
+                    <div class="detail-votes-container">
+                       53 votos
+                    </div>
+                </div>
+                <div class="detail-rat-votes-container">
+                    <div class="detail-grafic-rat">
+                        grafico
+                    </div>
+                </div>
+            </div>  
+            <div class="card-vote-comment">
+            <div class="card-vote-comment-btn">
+                <button>Votar</button>
             </div>
-            <div>
-                <h1>comentar</h1>
-            </div>    
+            </div>
+            <div class="card-vote-comment">
+            <div class="card-vote-comment-btn">
+                <button>Añadir comentario</button>
+            </div>  
+            </div>
         </div>
         <div class="card-detail" *ngFor="let author of book.items[0].volumeInfo.authors">
           <label>autor: </label><p>{{author}}</p>
