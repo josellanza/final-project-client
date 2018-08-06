@@ -31,13 +31,12 @@
 <div id="page-header-top"></div>
 
 <section>
-  <div *ngIf="!loading && book" id="site-main" class="container">
+  <div *ngIf="loading" id="site-main" class="container">
       <app-detail-page [book]="book"></app-detail-page> 
   </div>
   
   <router-outlet></router-outlet>
 </section>
-{{book.title}}
 <footer id="page-footer">
   <div class="footer-container">
     <div class="footer brand">

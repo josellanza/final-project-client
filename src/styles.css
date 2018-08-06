@@ -225,6 +225,11 @@ input {
   margin: 10px 0px;
 }
 
+.card-vote-comment a {
+  margin: 10px 0px;
+  color:rgb(44, 188, 94);
+}
+
 .container {
   margin: auto auto;
   display: inline-block;
@@ -465,8 +470,6 @@ form .field.has-error input {
 }
 
 @media screen and (max-width: 992px) {
-  body {
-  }
 }
 
 /* On screens that are 600px or less, set the background color to olive */

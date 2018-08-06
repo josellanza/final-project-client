@@ -22,16 +22,30 @@
                     </div>
                 </div>
             </div>  
-            <div class="card-vote-comment">
-            <div class="card-vote-comment-btn">
-                <button>Votar</button>
+            <div *ngIf="!!user" class="card-vote-comment">
+                <div class="auth-links">
+                    <div class="card-vote-comment-btn">
+                        <button>Votar</button>
+                    </div>
+                </div>    
             </div>
+            <div *ngIf="!!user" class="card-vote-comment">
+                <div class="card-vote-comment-btn">
+                    <button>Añadir comentario</button>
+                </div>  
             </div>
-            <div class="card-vote-comment">
-            <div class="card-vote-comment-btn">
-                <button>Añadir comentario</button>
-            </div>  
+            <div *ngIf="!user" class="card-vote-comment">
+                <div class="auth-links">
+                    <div class="card-vote-comment-btn">
+                        <button><a [routerLink]="['/signup']">Votar</a></button>
+                    </div>
+                </div>    
             </div>
+            <div *ngIf="!user" class="card-vote-comment">
+                <div class="card-vote-comment-btn">
+                    <button><a [routerLink]="['/signup']">Añadir comentario</a></button>
+                </div>  
+            </div> 
         </div>
         <div class="card-detail">
           <ul>
