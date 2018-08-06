@@ -475,3 +475,9 @@ form .field.has-error input {
     width: 1000px;
   }
 }
+
+@media screen and (max-width: 770px) {
+  body {
+    width: 1000px;
+  }
+}
