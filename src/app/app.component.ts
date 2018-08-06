@@ -28,9 +28,14 @@ export class AppComponent implements OnInit {
   handleSearchClick() {
     this.booksService.searchBook(this.book)
       .then((book) => {
-      this.authService.storeBook(book);
-      return this.book = book;
-      })
+      return this.authService.storeBook(book)
+      .then((data) => {
+        return this.book = data;
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    })
       .catch((err) => {
         console.log(err);
       });
