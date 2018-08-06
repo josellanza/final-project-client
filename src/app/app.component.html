@@ -29,7 +29,7 @@
   </nav>
 </header>
 <section>
-  <div *ngIf="!book" id="site-main" class="container">
+  <div *ngIf="book" id="site-main" class="container">
       <app-detail-page [book]="book"></app-detail-page> 
   </div>
   <router-outlet></router-outlet>
