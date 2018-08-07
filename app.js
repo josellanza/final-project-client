@@ -1,5 +1,4 @@
 'use strict'
-// https://medium.com/@ryanchenkie_40935/angular-cli-deployment-host-your-angular-2-app-on-heroku-3f266f13f352
 
 const express = require('express');
 const path = require('path');
@@ -19,10 +18,10 @@ const forceSSL = function () {
 
 app.use(forceSSL());
 
-app.use(express.static(path.join(__dirname, '/dist')));
+app.use(express.static(path.join(__dirname, '/dist/client')));
 
 app.get('/*', function (req, res) {
-  res.sendFile(path.join(path.join(__dirname, '/dist/index.html')));
+  res.sendFile(path.join(path.join(__dirname, '/dist/client/index.html')));
 });
 
 const port = process.env.PORT || 8080;
