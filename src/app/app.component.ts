@@ -30,7 +30,7 @@ export class AppComponent implements OnInit {
       .then((book) => {
       return this.booksService.storeBook(book)
       .then((data) => {
-        return this.book = data;
+        this.book = data;
         })
         .catch((err) => {
           console.log(err);

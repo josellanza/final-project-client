@@ -11,7 +11,7 @@ export class BooksService {
 
   private baseUrl = 'https://www.googleapis.com/books/v1/volumes/?q='; // ?q=little prince
 
-  private apiUrl = environment.apiUrl + '/name-of-resource';
+  private apiUrl = environment.apiUrl + '/book';
 
   constructor(private httpClient: HttpClient) { }
 
@@ -20,7 +20,7 @@ export class BooksService {
     const options = {
       withCredentials: true
     };
-    return this.httpClient.get(`${this.baseUrl}/?q=` + book, options)
+    return this.httpClient.get(`${this.baseUrl}/` + book, options)
     .toPromise();
   }
 
