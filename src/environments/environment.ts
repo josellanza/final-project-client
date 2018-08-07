@@ -5,9 +5,9 @@
 export const environment = {
   production: false,
   apiUrl: 'http://localhost:3000',
-  'apiKey': 'AIzaSyDu8xr12NJ4Jj2Dzzgw-6TIIpV69PridJY',
-  'clientId': 'booksaddicted-212213.apps.googleusercontent.com',
-  'scope': 'profile',
+  apiKey: 'AIzaSyDu8xr12NJ4Jj2Dzzgw-6TIIpV69PridJY',
+  clientId: 'booksaddicted-212213.apps.googleusercontent.com',
+  scope: 'profile',
 };
 
 /*
