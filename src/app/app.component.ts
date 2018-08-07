@@ -11,6 +11,7 @@ import { BooksService } from './services/books.service';
 export class AppComponent implements OnInit {
   title = 'app';
   loading = true;
+  loadingBook = true;
   anon: boolean;
   user: any;
   book: any;
@@ -26,6 +27,7 @@ export class AppComponent implements OnInit {
   }
 
   handleSearchClick() {
+    this.loadingBook = false;
     this.booksService.searchBook(this.book)
       .then((book) => {
       return this.booksService.storeBook(book)

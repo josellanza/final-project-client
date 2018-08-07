@@ -17,7 +17,6 @@ import { DetailPageComponent } from './pages/detail-page/detail-page.component';
 const routes: Routes = [
   { path: 'signup', component: SignupPageComponent, canActivate: [RequireAnonGuard] },
   { path: 'login', component: LoginPageComponent, canActivate: [RequireAnonGuard] },
-  { path: ':id', component: DetailPageComponent, canActivate: [RequireInitGuard] },
   { path: '', component: HomePageComponent, canActivate: [RequireInitGuard] }
 ];
 
