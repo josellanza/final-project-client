@@ -37,13 +37,13 @@
             <div *ngIf="!loadingBook && !user" class="card-vote-comment">
                 <div class="auth-links">
                     <div class="card-vote-comment-btn">
-                        <a [routerLink]="['/signup']">Votar</a>
+                        <div class="card-vote-comment-link"><a [routerLink]="['/signup']">Votar</a></div>
                     </div>
                 </div>    
             </div>
             <div *ngIf="!loadingBook && !user" class="card-vote-comment">
                 <div class="card-vote-comment-btn">
-                    <a [routerLink]="['/signup']">Añadir comentario</a>
+                    <div class="card-vote-comment-link"><a [routerLink]="['/signup']">Añadir comentario</a></div>
                 </div>  
             </div> 
         </div>
