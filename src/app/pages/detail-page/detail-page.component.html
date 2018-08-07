@@ -1,4 +1,4 @@
-<div id="page-container"  *ngIf= "!signupLoading || !loginLoading">
+<div id="page-container">
     <div class="card-title">
         <h1>{{book.title}}</h1>
     </div>
@@ -7,13 +7,14 @@
             <div>
                 <img src="{{book.image}}" alt="">
             </div>
-            <div class="card-vote-comment">
+            
+            <div class="card-vote-comment" *ngIf="loading">
                 <div class="detail-rat-votes-container">
                     <div class="detail-rat-container">
-                        7.5
+                        {{book.average}}
                     </div>
                     <div class="detail-votes-container">
-                       1.125 votos
+                       {{book.votes.length}}<br>votos
                     </div>
                 </div>
                 <div class="detail-rat-votes-container">
@@ -22,26 +23,28 @@
                     </div>
                 </div>
             </div>  
-            <div *ngIf="!loadingBook && !!user" class="card-vote-comment">
+            <div class="card-vote-comment">
                 <div class="auth-links">
                     <div class="card-vote-comment-btn">
-                        <button>Votar</button>
+                        <input type="number" name="score" #score >
+                        <button type="submit" (click)="handleAddClick(score.value)">Votar</button>
+
                     </div>
                 </div>    
             </div>
-            <div *ngIf="!loadingBook && !!user" class="card-vote-comment">
+            <div *ngIf="!loading && !!user" class="card-vote-comment">
                 <div class="card-vote-comment-btn">
                     <button>Añadir comentario</button>
                 </div>  
             </div>
-            <div *ngIf="!loadingBook && !user" class="card-vote-comment">
+            <div *ngIf="!loading && !user" class="card-vote-comment">
                 <div class="auth-links">
                     <div class="card-vote-comment-btn">
                         <div class="card-vote-comment-link"><a [routerLink]="['/signup']">Votar</a></div>
                     </div>
                 </div>    
             </div>
-            <div *ngIf="!loadingBook && !user" class="card-vote-comment">
+            <div *ngIf="!loading && !user" class="card-vote-comment">
                 <div class="card-vote-comment-btn">
                     <div class="card-vote-comment-link"><a [routerLink]="['/signup']">Añadir comentario</a></div>
                 </div>  

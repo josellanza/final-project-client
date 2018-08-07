@@ -41,4 +41,18 @@ export class BooksService {
     .toPromise();
 
   }
+
+  addScore(book: any, score: number): Promise<any>  {
+    const options = {
+      withCredentials: true
+    };
+
+    const data = {
+      book,
+      score
+    };
+
+    return this.httpClient.post(`${this.apiUrl}/score`, data,  options)
+    .toPromise();
+  }
 }

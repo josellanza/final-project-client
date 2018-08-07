@@ -18,9 +18,6 @@ export class AuthService {
 
   constructor(private httpClient: HttpClient) { }
 
-
-
-
   private setUser(user?: any) {
     this.user = user;
     this.userChange.next(user);
@@ -76,4 +73,5 @@ export class AuthService {
    getUser(): any {
     return this.user;
   }
+
 }
