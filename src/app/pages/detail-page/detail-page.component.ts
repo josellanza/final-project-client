@@ -9,7 +9,7 @@ import { BooksService } from '../../services/books.service';
   styleUrls: ['./detail-page.component.css']
 })
 export class DetailPageComponent implements OnInit {
-  loading = true;
+  loadingDetail = true;
   anon: boolean;
   user: any;
   @Input()
@@ -20,7 +20,7 @@ export class DetailPageComponent implements OnInit {
 
   ngOnInit() {
     this.authService.userChange$.subscribe((user) => {
-      this.loading = false;
+      this.loadingDetail = false;
       this.user = user;
       this.anon = !user;
     });
