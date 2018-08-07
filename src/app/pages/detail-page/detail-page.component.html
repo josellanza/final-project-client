@@ -26,27 +26,38 @@
             <div class="card-vote-comment">
                 <div class="auth-links">
                     <div class="card-vote-comment-btn">
-                        <input type="number" name="score" min="0" max="10" #score>
-                        
-                        <button type="submit" (click)="handleAddClick(score.value)">Votar</button>
+                        <select class="card-vote-comment-layout" name="score" #score>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>  
+                        </select>                      
+                        <button class="card-vote-comment-layout" type="submit" (click)="handleAddClick(score.value)">Votar</button>
                     </div>
                 </div>    
             </div>
             <div class="card-vote-comment">
                 <div class="card-vote-comment-btn">
-                    <button>Añadir comentario</button>
+                    <button class="card-vote-comment-layout">Añadir comentario</button>
                 </div>  
             </div>
             <div *ngIf="!loadingDetail && !user" class="card-vote-comment">
                 <div class="auth-links">
                     <div class="card-vote-comment-btn">
-                        <div class="card-vote-comment-link"><a [routerLink]="['/signup']">Votar</a></div>
+                        <div class="card-vote-comment-layout"><a [routerLink]="['/signup']">Votar</a></div>
                     </div>
                 </div>    
             </div>
             <div *ngIf="!loadingDetail && !user" class="card-vote-comment">
                 <div class="card-vote-comment-btn">
-                    <div class="card-vote-comment-link"><a [routerLink]="['/signup']">Añadir comentario</a></div>
+                    <div class="card-vote-comment-layout"><a [routerLink]="['/signup']">Añadir comentario</a></div>
                 </div>  
             </div> 
         </div>
