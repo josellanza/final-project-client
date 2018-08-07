@@ -15,6 +15,7 @@ export class LoginPageComponent implements OnInit {
   error = null;
   processing = false;
   userLogged = false;
+  loginLoading = false;
   username: string;
   password: string;
 
@@ -37,6 +38,7 @@ export class LoginPageComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.loginLoading = true;
   }
 
 }

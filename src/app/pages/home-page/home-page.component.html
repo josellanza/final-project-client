@@ -1,7 +1,7 @@
 <div id="page-container">
-        
-    <div class="home-card">
-        <img src="" alt="">
-    </div>
-
+    <div class="home-page-card">  
+        <div *ngFor="let book of books" class="home-image-card">
+            <img src="{{book.image}}" alt=""><div class="home-rat-card"><p><b>7.5</b><br>{{book.title}}</p></div>  
+        </div>
+    </div> 
 </div> 

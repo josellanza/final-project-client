@@ -316,6 +316,38 @@ input {
   font-size: 7.5px;
 }
 
+/* home */
+
+.home-page-card {
+  display: flex;
+  flex-flow: wrap;
+  margin: 5px 20px;
+}
+
+.home-image-card {
+  display: flex;
+  flex-flow: column;
+  margin: 10px 20px;
+  text-align: center;
+}
+
+.home-image-card img {
+  border: 1px solid #E2E2E2;
+  border-radius: 5px;
+  width: 190px;
+  height: 300px;
+  box-shadow: 2px 3px 4px #BBBBBB;
+}
+
+.home-rat-card p {
+  margin: -75px 0;
+  color: white;
+  width: 190px;
+  height: 75px;
+  background-color: rgb(36, 150, 75, 0.9);
+  padding: 0 2px;  
+}
+
 .inline-authors {
   display: inline;
 }

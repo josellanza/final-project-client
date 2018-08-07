@@ -14,6 +14,7 @@ export class SignupPageComponent implements OnInit {
   processing = false;
   username: string;
   password: string;
+  signupLoading = false;
 
   constructor(private authService: AuthService, private router: Router) {}
 
@@ -35,6 +36,7 @@ export class SignupPageComponent implements OnInit {
     }
 
   ngOnInit() {
+    this.signupLoading = true;
   }
 
 }

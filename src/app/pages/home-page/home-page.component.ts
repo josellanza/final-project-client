@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { BooksService } from '../../services/books.service';
 
 @Component({
   selector: 'app-home-page',
@@ -7,12 +8,18 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 
 export class HomePageComponent implements OnInit {
-  @Input()
-    book: any;
-  constructor() { }
+  books: any;
+
+  constructor(private booksService: BooksService ) { }
 
   ngOnInit() {
+    this.booksService.getBooks(this.books)
+    .then ((data) => {
+      this.books = data;
+    })
+    .catch((err) => {
+      console.log(err);
+    });
   }
-
 }
 

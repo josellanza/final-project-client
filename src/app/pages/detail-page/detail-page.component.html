@@ -1,4 +1,4 @@
-<div id="page-container">
+<div id="page-container"  *ngIf= "!signupLoading || !loginLoading">
     <div class="card-title">
         <h1>{{book.title}}</h1>
     </div>
@@ -22,28 +22,28 @@
                     </div>
                 </div>
             </div>  
-            <div *ngIf="!loading && !!user" class="card-vote-comment">
+            <div *ngIf="!loadingBook && !!user" class="card-vote-comment">
                 <div class="auth-links">
                     <div class="card-vote-comment-btn">
                         <button>Votar</button>
                     </div>
                 </div>    
             </div>
-            <div *ngIf="!loading && !!user" class="card-vote-comment">
+            <div *ngIf="!loadingBook && !!user" class="card-vote-comment">
                 <div class="card-vote-comment-btn">
                     <button>Añadir comentario</button>
                 </div>  
             </div>
-            <div *ngIf="!loading && !user" class="card-vote-comment">
+            <div *ngIf="!loadingBook && !user" class="card-vote-comment">
                 <div class="auth-links">
                     <div class="card-vote-comment-btn">
-                        <button><a [routerLink]="['/signup']">Votar</a></button>
+                        <a [routerLink]="['/signup']">Votar</a>
                     </div>
                 </div>    
             </div>
-            <div *ngIf="!loading && !user" class="card-vote-comment">
+            <div *ngIf="!loadingBook && !user" class="card-vote-comment">
                 <div class="card-vote-comment-btn">
-                    <button><a [routerLink]="['/signup']">Añadir comentario</a></button>
+                    <a [routerLink]="['/signup']">Añadir comentario</a>
                 </div>  
             </div> 
         </div>

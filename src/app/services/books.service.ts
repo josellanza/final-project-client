@@ -32,4 +32,13 @@ export class BooksService {
     return this.httpClient.post(`${this.apiUrl}/add`, book, options)
     .toPromise();
   }
+
+  getBooks(book: any): Promise<any> {
+    const options = {
+      withCredentials: true
+    };
+    return this.httpClient.get(`${this.apiUrl}/get`, options)
+    .toPromise();
+
+  }
 }
