@@ -102,18 +102,44 @@
   }
 
   ```
+  Book model
 
   Book {
-    comments: [ 
-      { userId: {
-        type: ObjectId,
-        ref: 'User'
-      },
-        comment: string} 
-    ],
-
-    critics: [ 
-      { userId: string } ]
+      title: {
+    type: String
+  },
+  author: [{
+    type: String
+  }],
+  image: {
+    type: String
+  },
+  price: {
+    type: Number
+  },
+  pageCount: {
+    type: Number
+  },
+  publishedDate: {
+    type: Date
+  },
+  publisher: {
+    type: String
+  },
+  votes: [{
+    type: Number
+  }],
+  comments: [{
+    type: ObjectId,
+    ref: 'User'
+  },
+  {
+    type: String
+  }
+  ],
+  apiBookId: {
+    type: String
+  }
 }
 ```
 

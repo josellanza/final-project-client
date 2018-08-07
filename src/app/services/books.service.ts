@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../environments/environment';
+
 
 @Injectable({
   providedIn: 'root'
@@ -7,7 +9,9 @@ import { HttpClient } from '@angular/common/http';
 
 export class BooksService {
 
-  private baseUrl = 'https://www.googleapis.com/books/v1/volumes'; // ?q=little prince
+  private baseUrl = 'https://www.googleapis.com/books/v1/volumes/?q='; // ?q=little prince
+
+  private apiUrl = environment.apiUrl + '/name-of-resource';
 
   constructor(private httpClient: HttpClient) { }
 
@@ -20,5 +24,12 @@ export class BooksService {
     .toPromise();
   }
 
+  storeBook(book: any): Promise<any> {
 
+    const options = {
+      withCredentials: true
+    };
+    return this.httpClient.post(`${this.apiUrl}/add`, book, options)
+    .toPromise();
+  }
 }
