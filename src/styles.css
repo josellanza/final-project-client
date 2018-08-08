@@ -283,6 +283,14 @@ input {
   margin-bottom: 40px;
 }
 
+.detail-comments-container {
+  margin: 110px 20px;
+}
+
+.detail-comments-container p {
+  font-size: 15px;
+}
+
 /* footer */
 
 .footer-container{

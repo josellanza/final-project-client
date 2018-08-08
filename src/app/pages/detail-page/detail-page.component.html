@@ -23,9 +23,9 @@
                     </div>
                 </div>
             </div>  
-            <div class="card-vote-comment">
+            <div *ngIf="user" class="card-vote-comment">
                 <div class="auth-links">
-                    <div *ngIf="user" class="card-vote-comment-btn">
+                    <div class="card-vote-comment-btn">
                         <select class="card-vote-comment-layout" name="score" #score>
                         <option value="0">0</option>
                         <option value="1">1</option>
@@ -43,51 +43,39 @@
                     </div>
                 </div>    
             </div>
-            <div class="card-vote-comment">
-                <div *ngIf="user" class="card-vote-comment-btn">
-                    <input class="card-vote-comment-btn" name="comment"  #comment>                             
+            <div *ngIf="user" class="card-vote-comment">
+                <div class="card-vote-comment-btn">
+                    <input class="card-vote-comment-layout" name="comment"  #comment>                             
                     <button class="card-vote-comment-layout" type="submit" (click)="handleCommentClick(comment.value)">Añadir comentario</button>
                 </div>  
             </div>
             <div *ngIf="!user" class="card-vote-comment">
                 <div class="auth-links">
                     <div class="card-vote-comment-btn">
-                        <div class="card-vote-comment-layout"><a [routerLink]="['/signup']">Votar</a></div>
+                        <div class="card-vote-comment-layout"><a [routerLink]="['/login']">Votar</a></div>
                     </div>
                 </div>    
             </div>
-            <div *ngIf="!user" class="card-vote-comment">
-                <div class="card-vote-comment-btn">
-                    <div class="card-vote-comment-layout"><a [routerLink]="['/signup']">Añadir comentario</a></div>
-                </div>  
-            </div> 
+            <div>
+                <div *ngIf="!user" class="card-vote-comment">
+                    <div class="card-vote-comment-btn">
+                        <div class="card-vote-comment-layout"><a [routerLink]="['/login']">Añadir comentario</a></div>
+                    </div>  
+                </div> 
+            </div>
         </div>
         <div class="card-detail">
           <ul>
-              <li class="card-list-details">Titulo: </li>
-              <li class="card-list-details">Autor: </li>
-              <li class="card-list-details">Paginas: </li>
-              <li class="card-list-details">Año edición: </li>
-              <li class="card-list-details">Editorial: </li>
-              <li class="card-list-details">Precio: </li>
+              <li class="card-list-details">Titulo: {{book.title}}</li>
+              <li class="card-list-details">Autor: {{book.author}}</li>
+              <li class="card-list-details">Paginas: {{book.pageCount}}</li>
+              <li class="card-list-details">Año edición:{{book.publishedDate}} </li>
+              <li class="card-list-details">Editorial: {{book.publisher}}</li>
+              <li class="card-list-details">Precio: {{book.price}}</li>
+              <div class="detail-comments-container">
+                  <div class="detail-comment-card"><p>"{{book.comments.body}}"</p><br><p>{{book.comments.owner}}</p></div>
+              </div> 
           </ul>
         </div>
-        <div class="card-info">
-            <ul>
-                <li class="card-list-info">{{book.title}}</li>
-                <li class="card-list-info">
-                    <div class="inline-authors">
-                        <div>{{book.author}}</div>
-                    </div>
-                </li>
-                <li class="card-list-info">{{book.pageCount}}</li>
-                <li class="card-list-info">{{book.publishedDate}}</li>
-                <li class="card-list-info">{{book.publisher}}</li>
-                <li class="card-list-info">{{book.price}}</li>
-            </ul>
-        </div>
-        <div class="detail-comments-container">
-            <div class="detail-comment-card">{{book.comments}}</div>
-        </div>
-    </div>  
+    </div> 
 </div>       
