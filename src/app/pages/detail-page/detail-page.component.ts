@@ -18,10 +18,9 @@ export class DetailPageComponent implements OnInit {
   constructor(private booksService: BooksService, private authService: AuthService) { }
 
   ngOnInit() {
+    this.user = this.authService.getUser();
     this.authService.userChange$.subscribe((user) => {
-      this.user = user;
-      this.anon = !user;
-      this.loadingDetail = false;
+
       this.book = this.booksService.sharedData;
     });
     this.book = this.booksService.sharedData;

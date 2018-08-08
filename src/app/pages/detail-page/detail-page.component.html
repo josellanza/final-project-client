@@ -25,7 +25,7 @@
             </div>  
             <div class="card-vote-comment">
                 <div class="auth-links">
-                    <div class="card-vote-comment-btn">
+                    <div *ngIf="user" class="card-vote-comment-btn">
                         <select class="card-vote-comment-layout" name="score" #score>
                         <option value="0">0</option>
                         <option value="1">1</option>
@@ -44,19 +44,19 @@
                 </div>    
             </div>
             <div class="card-vote-comment">
-                <div class="card-vote-comment-btn">
+                <div *ngIf="user" class="card-vote-comment-btn">
                     <input class="card-vote-comment-btn" name="comment"  #comment>                             
                     <button class="card-vote-comment-layout" type="submit" (click)="handleCommentClick(comment.value)">Añadir comentario</button>
                 </div>  
             </div>
-            <div *ngIf="!loadingDetail && !user" class="card-vote-comment">
+            <div *ngIf="!user" class="card-vote-comment">
                 <div class="auth-links">
                     <div class="card-vote-comment-btn">
                         <div class="card-vote-comment-layout"><a [routerLink]="['/signup']">Votar</a></div>
                     </div>
                 </div>    
             </div>
-            <div *ngIf="!loadingDetail && !user" class="card-vote-comment">
+            <div *ngIf="!user" class="card-vote-comment">
                 <div class="card-vote-comment-btn">
                     <div class="card-vote-comment-layout"><a [routerLink]="['/signup']">Añadir comentario</a></div>
                 </div>  
