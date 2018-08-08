@@ -170,6 +170,10 @@ input {
   margin-left: 60px;
 }
 
+.card-detail ul li:nth-child(6) {
+  margin-bottom: 100px;
+}
+
 .card-list-details {
   color: #777777;
   margin-top: 1px;
@@ -284,11 +288,14 @@ input {
 }
 
 .detail-comments-container {
-  margin: 110px 20px;
+  margin: 10px 20px;
 }
 
 .detail-comments-container p {
   font-size: 15px;
+}
+.detail-comment-card {
+  margin: 20px 10px;
 }
 
 /* footer */

@@ -14,16 +14,19 @@ export class DetailPageComponent implements OnInit {
   book: any;
   average: number;
   loadingDetail = true;
+  commentExist = true;
 
   constructor(private booksService: BooksService, private authService: AuthService) { }
 
   ngOnInit() {
     this.user = this.authService.getUser();
     this.authService.userChange$.subscribe((user) => {
-
       this.book = this.booksService.sharedData;
     });
     this.book = this.booksService.sharedData;
+    if (this.book.comments.length > 0) {
+      this.commentExist = false;
+    }
   }
 
   handleScoreClick(score) {

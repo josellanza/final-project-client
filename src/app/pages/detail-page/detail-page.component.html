@@ -45,7 +45,7 @@
             </div>
             <div *ngIf="user" class="card-vote-comment">
                 <div class="card-vote-comment-btn">
-                    <input class="card-vote-comment-layout" name="comment"  #comment>                             
+                    <input class="card-vote-comment-layout" name="comment" required minlength="3"  #comment>                             
                     <button class="card-vote-comment-layout" type="submit" (click)="handleCommentClick(comment.value)">Añadir comentario</button>
                 </div>  
             </div>
@@ -65,17 +65,22 @@
             </div>
         </div>
         <div class="card-detail">
-          <ul>
-              <li class="card-list-details">Titulo: {{book.title}}</li>
-              <li class="card-list-details">Autor: {{book.author}}</li>
-              <li class="card-list-details">Paginas: {{book.pageCount}}</li>
-              <li class="card-list-details">Año edición:{{book.publishedDate}} </li>
-              <li class="card-list-details">Editorial: {{book.publisher}}</li>
-              <li class="card-list-details">Precio: {{book.price}}</li>
-              <div class="detail-comments-container">
-                  <div class="detail-comment-card"><p>"{{book.comments.body}}"</p><br><p>{{book.comments.owner}}</p></div>
-              </div> 
-          </ul>
+             <ul>
+                <li class="card-list-details">Titulo: {{book.title}}</li>
+                <li class="card-list-details">Autor: {{book.author}}</li>
+                <li class="card-list-details">Paginas: {{book.pageCount}}</li>
+                <li class="card-list-details">Año edición:{{book.publishedDate}} </li>
+                <li class="card-list-details">Editorial: {{book.publisher}}</li>
+                <li class="card-list-details">Precio: {{book.price}}</li>
+                <div class="detail-comments-container">
+                    <div *ngIf="!commentExist">
+                        <div *ngFor="let comment of book.comments" class="detail-comment-card">
+                            <p>"{{comment.body}}"</p>
+                            <p>{{comment.owner}}</p>
+                        </div>
+                    </div> 
+                </div>    
+            </ul>
         </div>
     </div> 
 </div>       
