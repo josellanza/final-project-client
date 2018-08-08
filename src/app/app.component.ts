@@ -33,6 +33,8 @@ export class AppComponent implements OnInit {
       return this.booksService.storeBook(book)
       .then((data) => {
         this.book = data;
+        this.booksService.sharedData = this.book;
+        this.router.navigate(['/book', this.book._id]);
         })
         .catch((err) => {
           console.log(err);

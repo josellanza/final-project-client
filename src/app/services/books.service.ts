@@ -9,6 +9,8 @@ import { environment } from '../../environments/environment';
 
 export class BooksService {
 
+  sharedData = null;
+
   private baseUrl = 'https://www.googleapis.com/books/v1/volumes/?q='; // ?q=little prince
 
   private apiUrl = environment.apiUrl + '/book';
@@ -33,7 +35,7 @@ export class BooksService {
     .toPromise();
   }
 
-  getBooks(book: any): Promise<any> {
+  getBooks(): Promise<any> {
     const options = {
       withCredentials: true
     };
@@ -53,6 +55,20 @@ export class BooksService {
     };
 
     return this.httpClient.post(`${this.apiUrl}/score`, data,  options)
+    .toPromise();
+  }
+
+  addComment(book: any, comment: string): Promise<any>  {
+    const options = {
+      withCredentials: true
+    };
+
+    const data = {
+      book,
+      comment
+    };
+
+    return this.httpClient.post(`${this.apiUrl}/comment`, data,  options)
     .toPromise();
   }
 }

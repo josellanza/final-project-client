@@ -11,7 +11,7 @@
       <label></label>
       <input type="text" name="search" [(ngModel)]="book"/> 
       <button class= "btn-book" type="submit" (click)="handleSearchClick()">
-        <a [routerLink]="['/']"><i class="fas fa-search"></i></a>
+        <i class="fas fa-search"></i>
       </button>
     </div>
     <div class="user-login container">
@@ -33,11 +33,7 @@
 <div id="page-header-top"></div>
 
 <section>
-  <div *ngIf="!loadingBook" id="site-main" class="container">
-      <app-detail-page [book]="book"></app-detail-page>
-  </div>
-
-  <router-outlet></router-outlet>
+    <router-outlet></router-outlet>
 </section>
 
 

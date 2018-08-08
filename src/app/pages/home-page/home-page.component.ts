@@ -13,7 +13,7 @@ export class HomePageComponent implements OnInit {
   constructor(private booksService: BooksService ) { }
 
   ngOnInit() {
-    this.booksService.getBooks(this.books)
+    this.booksService.getBooks()
     .then ((data) => {
       this.books = data;
     })

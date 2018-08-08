@@ -9,25 +9,25 @@ import { BooksService } from '../../services/books.service';
   styleUrls: ['./detail-page.component.css']
 })
 export class DetailPageComponent implements OnInit {
-  loadingDetail = true;
   anon: boolean;
   user: any;
-  @Input()
   book: any;
   average: number;
+  loadingDetail = true;
 
   constructor(private booksService: BooksService, private authService: AuthService) { }
 
   ngOnInit() {
     this.authService.userChange$.subscribe((user) => {
-      this.loadingDetail = false;
       this.user = user;
       this.anon = !user;
+      this.book = this.booksService.sharedData;
+      this.loadingDetail = false;
     });
 
   }
 
-  handleAddClick(score) {
+  handleScoreClick(score) {
     this.booksService.addScore(this.book, score)
     .then((data) => {
       this.book = data;
@@ -35,6 +35,16 @@ export class DetailPageComponent implements OnInit {
     .catch((err) => {
       console.log(err);
     });
+  }
+
+  handleCommentClick(comment) {
+    this.booksService.addComment(this.book, comment)
+      .then((data) => {
+      this.book = data;
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }
 
 }

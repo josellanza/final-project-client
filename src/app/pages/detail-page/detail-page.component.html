@@ -38,14 +38,15 @@
                         <option value="8">8</option>
                         <option value="9">9</option>
                         <option value="10">10</option>  
-                        </select>                      
-                        <button class="card-vote-comment-layout" type="submit" (click)="handleAddClick(score.value)">Votar</button>
+                        </select>
+                        <button class="card-vote-comment-layout" type="submit" (click)="handleScoreClick(score.value)">Votar</button>
                     </div>
                 </div>    
             </div>
             <div class="card-vote-comment">
                 <div class="card-vote-comment-btn">
-                    <button class="card-vote-comment-layout">Añadir comentario</button>
+                    <input class="card-vote-comment-btn" name="comment"  #comment>                             
+                    <button class="card-vote-comment-layout" type="submit" (click)="handleCommentClick(comment.value)">Añadir comentario</button>
                 </div>  
             </div>
             <div *ngIf="!loadingDetail && !user" class="card-vote-comment">
@@ -84,6 +85,9 @@
                 <li class="card-list-info">{{book.publisher}}</li>
                 <li class="card-list-info">{{book.price}}</li>
             </ul>
+        </div>
+        <div class="detail-comments-container">
+            <div class="detail-comment-card">{{book.comments}}</div>
         </div>
     </div>  
 </div>       
