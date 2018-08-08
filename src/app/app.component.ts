@@ -26,9 +26,9 @@ export class AppComponent implements OnInit {
     });
   }
 
-  handleSearchClick() {
+  handleSearchClick(search) {
     this.loadingBook = false;
-    this.booksService.searchBook(this.book)
+    this.booksService.searchBook(search)
       .then((book) => {
       return this.booksService.storeBook(book)
       .then((data) => {

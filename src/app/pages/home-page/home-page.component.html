@@ -1,7 +1,7 @@
 <div id="page-container">
     <div class="home-page-card">  
         <div *ngFor="let book of books" class="home-image-card">
-            <img src="{{book.image}}" alt=""><div class="home-rat-card"><p><b>{{book.average}}</b><br>{{book.title}}</p></div>  
+           <img src="{{book.image}}" alt=""><div class="home-rat-card"><p><b>{{book.average}}</b><br> <a [routerLink]="['/book', book._id]">{{book.title}}</a></p></div>  
         </div>
     </div> 
 </div> 

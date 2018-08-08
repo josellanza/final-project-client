@@ -21,10 +21,10 @@ export class DetailPageComponent implements OnInit {
     this.authService.userChange$.subscribe((user) => {
       this.user = user;
       this.anon = !user;
-      this.book = this.booksService.sharedData;
       this.loadingDetail = false;
+      this.book = this.booksService.sharedData;
     });
-
+    this.book = this.booksService.sharedData;
   }
 
   handleScoreClick(score) {

@@ -9,8 +9,8 @@
     </div>
     <div class="search container">
       <label></label>
-      <input type="text" name="search" [(ngModel)]="book"/> 
-      <button class= "btn-book" type="submit" (click)="handleSearchClick()">
+      <input type="text" name="search" #search/> 
+      <button class= "btn-book" type="submit" (click)="handleSearchClick(search.value)">
         <i class="fas fa-search"></i>
       </button>
     </div>

@@ -344,6 +344,10 @@ input {
   padding: 0 10px;
 }
 
+.home-rat-card a:hover {
+  text-decoration: underline;
+}
+
 .inline-authors {
   display: inline;
 }
