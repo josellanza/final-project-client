@@ -21,5 +21,9 @@ export class HomePageComponent implements OnInit {
       console.log(err);
     });
   }
+
+  handleLinkClick(book) {
+    this.booksService.sharedData = book;
+  }
 }
 
