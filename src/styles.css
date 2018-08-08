@@ -76,9 +76,14 @@ input {
   position: fixed;
 }
 
-#page-header-top {
+#page-header-space {
   width: 100%;
   height: 56px;
+}
+
+#page-footer-space {
+  width: 100%;
+  height: 650px;
 }
 
 #page-header nav {
@@ -508,6 +513,10 @@ form .field.has-error input {
 @media screen and (max-width: 600px) {
   body {
     width: 1000px;
+  }
+  #page-footer-space {
+    width: 100%;
+    height: 1300px;
   }
 }
 
