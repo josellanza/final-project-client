@@ -293,6 +293,7 @@ input {
 
 .detail-comments-container p {
   font-size: 15px;
+  text-align: right;
 }
 .detail-comment-card {
   margin: 20px 10px;
