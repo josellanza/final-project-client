@@ -15,7 +15,7 @@
         </div>
         <div class="field" [ngClass]="{'has-error': feedbackEnabled && passwordField.errors}">
           <label></label>
-          <input placeholder="Contraseña:" type="text" name="password" [(ngModel)]="password" #passwordField="ngModel" required minlength="3" [disabled]="processing"/>
+          <input placeholder="Contraseña:" type="password" name="password" [(ngModel)]="password" #passwordField="ngModel" required minlength="3" [disabled]="processing"/>
           <div *ngIf="feedbackEnabled && passwordField.errors">
             <p *ngIf="passwordField.errors.required" class="validation">campo obligatorio</p>
             <p *ngIf="passwordField.errors.minlength" class="validation">contraseña muy corta</p>
